@@ -1,0 +1,26 @@
+.home {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.title {
+  color: #1877f2;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+.userInfo, .authOptions {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.userInfo p, .authOptions p {
+  margin-bottom: 20px;
+}
+
+.userInfo a, .authOptions a {
+  margin: 0 10px;
+  text-decoration: none;
+}
