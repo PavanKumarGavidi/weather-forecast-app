@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Package",
+  "type": "object",
+  "required": ["name", "version"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the package."
+    },
+    "version": {
+      "type": "string",
+      "description": "The version of the package."
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the package."
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Keywords related to the package."
+    },
+    "homepage": {
+      "type": "string",
+      "description": "The URL to the project homepage."
+    },
+    "bugs": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The URL to the project's issue tracker."
+        }
+      }
+    },
+    "license": {
+      "type": "string",
+      "description": "The license of the package."
+    },
+    "author": {
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "The name of the author."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "The name of the author."
+            },
+            "email": {
+              "type": "string",
+              "description": "The email of the author."
+            },
+            "url": {
+              "type": "string",
+              "description": "The URL of the author's website."
+            }
+          }
+        }
+      ]
+    },
+    "files": {
+      "type": "array",
+      "description": "The files included in the package.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "main": {
+      "type": "string",
+      "description": "The primary entry point to your program."
+    },
+    "repository": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The type of version control system."
+        },
+        "url": {
+          "type": "string",
+          "description": "The URL to the repository."
+        }
+      }
+    },
+    "scripts": {
+      "type": "object",
+      "description": "The scripts that are run at various times in the package lifecycle.",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "description": "The dependencies required by the package.",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "devDependencies": {
+      "type": "object",
+      "description": "The development dependencies required by the package.",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "peerDependencies": {
+      "type": "object",
+      "description": "The peer dependencies required by the package.",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "private": {
+      "type": "boolean",
+      "description": "If true, the package is private and cannot be published."
+    }
+  }
+}
